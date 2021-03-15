@@ -11,7 +11,7 @@ This skill currently does not work, and there are currently no instructions.
 
 ~~This skill does not currently allow you to create dynamic colour displays through the mycroft website.~~
 ~~In order for a dynamic colour display, you must edit from within the "skills/respeaker_apa102_LED"~~
-~~and if needed, add your config to the approprite folder within "led_profiles". ~~
+~~and if needed, add your config to the approprite folder within "led_profiles".~~
 
 ## **Supported Respeaker devices:**
 * ReSpeaker 4 Mic Array or ReSpeaker V2
