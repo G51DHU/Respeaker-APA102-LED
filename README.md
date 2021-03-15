@@ -1,11 +1,11 @@
 
 # **Respeaker APA102 LED**
 
-## **About**
+## **About:**
 
 This is a Mycroft skill, to enable LED lights, on Respeaker devices using the APA102 LED's.
 
-## **Disclaimer**
+## **Disclaimer:**
 
 This skill currently does not work, and there are currently no instructions.
 
