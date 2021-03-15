@@ -1,0 +1,51 @@
+{
+    "skillMetadata": {
+        "sections": [
+            {
+                "name": "Description",
+                "fields":[
+                    {
+                        "name": "How to use.",
+                        "type": "label",
+                        "label": 
+                             ["Please enter a RGB value, in the fields below.",
+                             "To help you find the corrosponding RGB value for the desired colour, you can use sites such as:",
+                             "https://htmlcolorcodes.com/",
+                             "https://www.w3schools.com/colors/colors_picker.asp",
+                             "https://image-color.com/"
+                             ]
+                    }
+                ]
+            },
+            {
+                "name": "Colour select",
+                "fields": [
+                    {
+                        "name": "Inactive",
+                        "type": "text",
+                        "label": "Enter RGB value.",
+                        "value": ""
+                    },
+                    {
+                        "name": "Woken",
+                        "type": "text",
+                        "label": "Enter RGB value.",
+                        "value": ""
+                    },
+                    {
+                        "name": "Processing",
+                        "type": "text",
+                        "label": "Enter RGB value.",
+                        "value": ""
+                    },
+                    {
+                        "name": "Processed",
+                        "type": "text",
+                        "label": "Enter RGB value.",
+                        "value": ""
+                    }
+                ]
+            }
+        ]
+    }
+}
