@@ -1,7 +1,6 @@
 
 
-# <img src='https://user-images.githubusercontent.com/53785846/111136788-00251f00-8576-11eb-83c9-62c6e5933e7c.png' card_color='#22a7f0' width='70' height='70' style='vertical-align:bottom'/>
-# **Respeaker APA102 LED**
+# <img src='https://user-images.githubusercontent.com/53785846/111136788-00251f00-8576-11eb-83c9-62c6e5933e7c.png' card_color='#22a7f0' width='70' height='70' style='vertical-align:bottom'/> # **Respeaker APA102 LED**
 
 ## **About:**
 
