@@ -11,16 +11,16 @@ In order for a dynamic colour display, you must edit from within the "skills/res
 if needed, add your config to the approprite folder. 
 
 ##Supported Respeaker devices: 
-    - ReSpeaker 4 Mic Array or ReSpeaker V2
-    - ReSpeaker V2
-    - ReSpeaker USB 6+1 Mic Array
-    - ReSpeaker USB 4 Mic Array
+* ReSpeaker 4 Mic Array or ReSpeaker V2
+* ReSpeaker V2
+* ReSpeaker USB 6+1 Mic Array
+* ReSpeaker USB 4 Mic Array
 
 ##Examples
-    - "Enable Mycroft LED"
-    - "Disable Mycroft LED"
-    - "Change inactive LED colour to Blue"
-    - "Set LED brightness to 50"
+* "Enable Mycroft LED"
+* "Disable Mycroft LED"
+* "Change inactive LED colour to Blue"
+* "Set LED brightness to 50"
 
 ##Credits
 * tinue         |   https://github.com/tinue/apa102-pi
