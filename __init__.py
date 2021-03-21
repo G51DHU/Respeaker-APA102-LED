@@ -1,93 +1,44 @@
 
 
-from mycroft_bus_client import MessageBusClient, Message
-import apa102_pi
+from mycroft import MycroftSkill
+import importlib
 
 
-"""
-Get the current LED config for each state.
+class onMessageBusEvent(MycroftSkill):
+    def initialize(self): 
+        self.add_event('mycroft:ready', activateLedOnEvent("ready"))
+        self.add_event('recognizer_loop:wakeword', activateLedOnEvent("wakeword"))
+        self.add_event('mycroft:ready', activateLedOnEvent())
+        self.add_event('mycroft:ready', activateLedOnEvent())
 
-    class getLedConfig():
 
-"""
-class getLedConfig():
-    def inactive(self):
-        pass
+
+class activateLedOnEvent():
+    pass
+
+
+                
+class settingsMeta(MycroftSkill):
+    def isLedEnabled(self):
+        if self.settings.get("is_led_enabled", "") == "yes":
+            return True
+        return False
+
+    def customOrDefault(self):
+        return self.settings.get("led_default_config", "") 
     
-    def woken(self):
-        pass
+    def led_custom_config(self):
+        return self.settings.get("led_custom_config", "") 
 
-    def prosessing(self):
-        pass
-
-    def processed(self):
-        pass
+    def led_default_config(self):
+        return self.settings.get("led_default_config", "") 
 
 
-"""
-Change the current LED config.
 
-    class changeLedConfig():
+class findProfileImport():
+    def preset(self):
+        return importlib.import_module(".led_profiles.default." + settingsMeta.led_default_config )
 
-"""
-class changeLedConfig():
-    def brightness(self):
-        pass
+    def custom(self):
+        return importlib.import_module(".led_profiles.custom." + settingsMeta.led_custom_config )
 
-    def inactive(self):
-        pass
-
-    def wake(self):
-        pass
-
-    def processing(self):
-        pass
-
-    def processed(self):
-        pass
-
-
-"""
-Wait for events within the message bus, 
-and then act upon them.
-
-    class onMessagebusEvent():
-
-"""
-class onMessagebusEvent():
-    def inactive(self):
-        pass
-
-    def wake(self):
-        pass
-
-    def processing(self):
-        pass
-
-    def processed(self):
-        pass
-
-
-"""
-When user says or inputs a command to control the LED,
-or query the state. It handles it and initiates the appropriate
-action.
-
-    class userSays():
-
-"""
-class userSays():
-    def stop(self):
-        pass
-    
-    def start(self):
-        pass
-
-    def change_colour(self):
-        pass
-    
-    def change_brightness(self):
-        pass
-
-    def what_is_brightness(self):
-        pass
