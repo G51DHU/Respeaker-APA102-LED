@@ -8,17 +8,14 @@ This is a Mycroft skill, to enable LED lights, on Respeaker devices using the AP
 
 ## **Disclaimer:**
 
-This skill currently does not work, and there are currently no instructions.
+This skill currently does not work.
 
-~~This skill does not currently allow you to create dynamic colour displays through the mycroft website.~~
-~~In order for a dynamic colour display, you must edit from within the "skills/respeaker_apa102_LED"~~
-~~and if needed, add your config to the approprite folder within "led_profiles".~~
+Button on respeaker hardware is not supported.
 
 ## **Supported Respeaker devices:**
-* ReSpeaker 4 Mic Array or ReSpeaker V2
-* ReSpeaker V2
 * ReSpeaker USB 6+1 Mic Array
-* ReSpeaker USB 4 Mic Array
+* May work with other devices, but not tested. 
+
 
 ## **Examples:**
 * "Enable Mycroft LED"
@@ -27,8 +24,19 @@ This skill currently does not work, and there are currently no instructions.
 * "Set LED brightness to 50"
 
 ## **Instructions:**
-* This skill currently does not work, and there are currently no instructions.
-
+#### Adding Custom LED profile
+In order to create a custom LED profile, 
+* Add your python file to the "led_profiles/custom" following the templates within the "led_profiles/default".
+### Enabling custom profile from the website.
+* Disable default LED profiles.
+* Select the newly added profile from the skill settings page on mycroft.
+### Enabling custom profile from "settingsmeta.json"
+* Go to the mycroft skills folder
+* Open this skill's folder.
+* Open settingsmeta.jon
+* Make sure the value of "default_or_custom" under the LED section, is set too "custom".
+* If your skill isn't already listed within the "options" of "led_custom_config" then add it.
+* Change "value" to the name of your python file, without the ".py" extension.
 
 ## **Credits:**
 * tinue         |   https://github.com/tinue/apa102-pi

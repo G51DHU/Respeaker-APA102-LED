@@ -1,44 +1,34 @@
 
-
 from mycroft import MycroftSkill
-import importlib
+import update
+import led
 
 
 class onMessageBusEvent(MycroftSkill):
-    def initialize(self): 
-        self.add_event('mycroft:ready', activateLedOnEvent("ready"))
-        self.add_event('recognizer_loop:wakeword', activateLedOnEvent("wakeword"))
-        self.add_event('mycroft:ready', activateLedOnEvent())
-        self.add_event('mycroft:ready', activateLedOnEvent())
+    def __init__(self):
+        self.led_config = checkSettingsMeta.led_config
+        
+    def initialize(self):
+        self.add_event('mycroft.skills.initialized', update.settings_meta_and_paths())
+    
+        if checkSettingsMeta.is_led_enabled() == True:
+            self.add_event('mycroft:ready', led.execute(self.led_config,"ready"))
+            self.add_event('recognizer_loop:wakeword', led.execute(self.led_config,"wakeword"))
 
-
-
-class activateLedOnEvent():
-    pass
-
-
-                
-class settingsMeta(MycroftSkill):
-    def isLedEnabled(self):
+                    
+                    
+class checkSettingsMeta(MycroftSkill):
+    """ 
+        Get settings from "settingsmeta.json"
+    """
+    def is_led_enabled(self):
         if self.settings.get("is_led_enabled", "") == "yes":
             return True
         return False
-
-    def customOrDefault(self):
-        return self.settings.get("led_default_config", "") 
-    
-    def led_custom_config(self):
-        return self.settings.get("led_custom_config", "") 
-
-    def led_default_config(self):
+        
+    def led_config(self):
         return self.settings.get("led_default_config", "") 
 
+            
 
-
-class findProfileImport():
-    def preset(self):
-        return importlib.import_module(".led_profiles.default." + settingsMeta.led_default_config )
-
-    def custom(self):
-        return importlib.import_module(".led_profiles.custom." + settingsMeta.led_custom_config )
-
+#revenue reputation regulation

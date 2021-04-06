@@ -1,0 +1,7 @@
+dependencies:
+  python:
+    - apa102-pi
+    - gpiozero
+    - spidev
+    - commentjson
+    - glob

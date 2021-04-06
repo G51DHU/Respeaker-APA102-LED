@@ -1,0 +1,11 @@
+{
+    "file_paths": {
+        "presets": {
+            "alexa": "led_profiles/preset/alexa.json",
+            "google_home": "led_profiles/preset/google_devices/google_home.json"
+        },
+        "custom": {
+            "lolo": "led_profiles/custom/lolo.json"
+        }
+    }
+}

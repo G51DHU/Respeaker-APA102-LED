@@ -3,16 +3,16 @@
         "sections": [
             {
                 "name": "Description",
-                "fields":[
+                "fields": [
                     {
                         "type": "label",
-                        "label": 
-                            [   "Please enter a RGB value, in the fields below.",
-                                "To help you find the corrosponding RGB value for the desired colour, you can use sites such as:",
-                                "https://htmlcolorcodes.com/",
-                                "https://www.w3schools.com/colors/colors_picker.asp",
-                                "https://image-color.com/"
-                            ]
+                        "label": [
+                            "Please enter a RGB value, in the fields below.",
+                            "To help you find the corrosponding RGB value for the desired colour, you can use sites such as:",
+                            "https://htmlcolorcodes.com/",
+                            "https://www.w3schools.com/colors/colors_picker.asp",
+                            "https://image-color.com/"
+                        ]
                     }
                 ]
             },
@@ -25,13 +25,6 @@
                         "label": "Enable LED?",
                         "options": "Yes|yes; No|no",
                         "value": "yes"
-                    },
-                    {
-                        "name": "default_or_custom",
-                        "type": "select",
-                        "label": "Do you want to choose from default or custom LED configurations?",
-                        "options": "Default|default; Custom|custom",
-                        "value": "default"
                     }
                 ]
             },
@@ -39,21 +32,13 @@
                 "name": "Select LED configuration",
                 "fields": [
                     {
-
-                        "name": "led_default_config",
-                        "type": "select",
-                        "label": "Select a Preset LED configuration.",
-                        "options": "Mycroft|mycroft; Alexa|alexa",
-                        "value": "mycroft"
-                    },
-                    {
-                        "name": "led_custom_config",
+                        "name": "led_config",
                         "type": "select",
                         "label": "Select from custom LED configurations.",
-                        "options": "custom 1| custom_1; custom 2| custom_2",
-                        "value": "custom_1"
-                    }   
-                ]  
+                        "options": "Alexa|alexa;Google home|google_home;Lolo|lolo",
+                        "value": "alexa"
+                    }
+                ]
             }
         ]
     }
