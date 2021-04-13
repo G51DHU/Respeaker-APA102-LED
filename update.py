@@ -11,9 +11,10 @@ class profilePaths():
         self.file_contents = {}
         
     def glob_to_find_profiles(self):
-        for file in glob.glob(f"led_profiles/**/*.json", recursive=True):
-            self.globbed_profiles [ "file_paths" ][ self.preset_or_custom(file) ][ os.path.basename(file) [ :-5 ]] = f"{file}"
-             
+        for file in glob.glob(f"led_profiles/**/*.py", recursive=True):
+            self.globbed_profiles [ "file_paths" ][ self.preset_or_custom(file) ][ os.path.basename(file) [ :-2 ]] = f"{file}"
+        print(self.globbed_profiles)
+        
     def get_from_file(self):
         with open("led_profile_paths.json","r") as file_contents:
             try:
@@ -105,7 +106,7 @@ class settingsMeta():
             commentjson.dump( self.file_contents ,f, indent=4 )
     
     
-def settings_meta_and_path():
+def settingsmeta_and_profile_paths():
     paths = profilePaths()
     paths.glob_to_find_profiles()
     paths.get_from_file()
@@ -117,3 +118,4 @@ def settings_meta_and_path():
     settings.compare_to_globbed_profiles()
     settings.edit_options_if_needed()
 
+settingsmeta_and_profile_paths()

@@ -35,7 +35,7 @@
                         "name": "led_config",
                         "type": "select",
                         "label": "Select from custom LED configurations.",
-                        "options": "Alexa|alexa;Google home|google_home;Lolo|lolo",
+                        "options": "Alexa.|alexa.;Google home.|google_home.;Google home max.|google_home_max.;Google nest.|google_nest.",
                         "value": "alexa"
                     }
                 ]

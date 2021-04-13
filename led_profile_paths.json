@@ -1,11 +1,11 @@
 {
     "file_paths": {
         "presets": {
-            "alexa": "led_profiles/preset/alexa.json",
-            "google_home": "led_profiles/preset/google_devices/google_home.json"
+            "alexa.": "led_profiles/preset/alexa.py",
+            "google_home.": "led_profiles/preset/google_devices/google_home.py",
+            "google_home_max.": "led_profiles/preset/google_devices/google_home_max.py",
+            "google_nest.": "led_profiles/preset/google_devices/google_nest.py"
         },
-        "custom": {
-            "lolo": "led_profiles/custom/lolo.json"
-        }
+        "custom": {}
     }
 }

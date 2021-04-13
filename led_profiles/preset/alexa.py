@@ -37,6 +37,9 @@ class setttings():
             pass
     
     
+#--------------------------
+
+ 
 class volume():
     def current():
         pass
@@ -50,17 +53,17 @@ class volume():
         
         def down():
             pass
-        
-        
-
-
+    
 
 #--------------------------
+
 
 class micoff():
     pass
 
+
 #--------------------------
+
 
 class update():
     def downloading():
@@ -72,7 +75,9 @@ class update():
     def takingTooLong():
         pass
     
+    
 #--------------------------
+
 
 class ringing():
     def call():
@@ -84,7 +89,9 @@ class ringing():
     def timer():
         pass
 
+
 #--------------------------
+
 
 class other():
     def listening():
@@ -101,6 +108,7 @@ class other():
     
     def notification():
         pass
+
 
 #--------------------------
 
