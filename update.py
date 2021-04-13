@@ -12,7 +12,7 @@ class profilePaths():
         
     def glob_to_find_profiles(self):
         for file in glob.glob(f"led_profiles/**/*.py", recursive=True):
-            self.globbed_profiles [ "file_paths" ][ self.preset_or_custom(file) ][ os.path.basename(file) [ :-2 ]] = f"{file}"
+            self.globbed_profiles [ "file_paths" ][ self.preset_or_custom(file) ][ os.path.basename(file) [ :-3 ]] = f"{file}"
         print(self.globbed_profiles)
         
     def get_from_file(self):
