@@ -4,7 +4,6 @@
 from apa102_pi.driver import apa102
 from gpiozero import LED
 import time
-import commentjson
 
 def getInfoThenExecute(event, led_config):
     pass
