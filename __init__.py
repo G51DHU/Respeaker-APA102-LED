@@ -1,6 +1,6 @@
 
 from mycroft import MycroftSkill
-from .modules import led, update
+from .modules import led
 
 class checkSettingsMeta(MycroftSkill):
     """ 
