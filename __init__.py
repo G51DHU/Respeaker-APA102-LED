@@ -5,10 +5,8 @@ import led
 
 
 class onMessageBusEvent(MycroftSkill):
-    def __init__(self):
-        self.led_config = checkSettingsMeta.led_config
-        
     def initialize(self):
+        self.led_config = checkSettingsMeta.led_config
         self.add_event('mycroft.skills.initialized', update.settingsmeta_and_profile_paths())
     
         if checkSettingsMeta.is_led_enabled() == True:
@@ -27,8 +25,4 @@ class checkSettingsMeta(MycroftSkill):
         return False
         
     def led_config(self):
-        return self.settings.get("led_default_config", "") 
-
-            
-
-#revenue reputation regulation
+        self.settings.get("led_default_config", "") 
