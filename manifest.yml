@@ -3,4 +3,3 @@ dependencies:
     - gpiozero
     - spidev
     - apa102-pi
-    - glob
