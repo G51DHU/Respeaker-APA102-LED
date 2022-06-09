@@ -11,12 +11,11 @@ class profilePaths():
         self.file_contents = {}
         
     def glob_to_find_profiles(self):
-        for file in glob.glob(f"led_profiles/**/*.py", recursive=True):
+        for file in glob.glob(f"../led_profiles/**/*.py", recursive=True):
             self.globbed_profiles [ "file_paths" ][ self.preset_or_custom(file) ][ os.path.basename(file) [ :-3 ]] = f"{file}"
-        print(self.globbed_profiles)
         
     def get_from_file(self):
-        with open("led_profile_paths.json","r") as file_contents:
+        with open("../led_profile_paths.json","r") as file_contents:
             try:
                 self.file_contents = json.load(file_contents)
             except:
@@ -27,7 +26,7 @@ class profilePaths():
             self.write_to_file()
                 
     def write_to_file(self):
-        with open("led_profile_paths.json","w") as f:
+        with open("../led_profile_paths.json","w") as f:
             json.dump(self.globbed_profiles, f, indent=4)
 
     def preset_or_custom(self, file):

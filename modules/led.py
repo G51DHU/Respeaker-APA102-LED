@@ -2,7 +2,6 @@
 
 
 from apa102_pi.driver import apa102
-from gpiozero import LED
 import time
 
 def getInfoThenExecute(event, led_config):

@@ -1,6 +1,6 @@
 
 from mycroft import MycroftSkill
-from . import update, led
+from .modules import led
 
 class checkSettingsMeta(MycroftSkill):
     """ 
@@ -18,7 +18,7 @@ class checkSettingsMeta(MycroftSkill):
 class onMessageBusEvent(MycroftSkill):
     def initialize(self):
         self.led_config = checkSettingsMeta.led_config
-        self.add_event('mycroft.skills.initialized', update.settingsmeta_and_profile_paths())
+        #self.add_event('mycroft.skills.initialized', update.settingsmeta_and_profile_paths())
     
         if checkSettingsMeta.is_led_enabled() == True:
             self.add_event('mycroft.ready', led.execute(self.led_config,"ready"))
