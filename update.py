@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import commentjson, glob, os
+import json, glob, os
     
 class profilePaths():
     def __init__(self):
@@ -18,7 +18,7 @@ class profilePaths():
     def get_from_file(self):
         with open("led_profile_paths.json","r") as file_contents:
             try:
-                self.file_contents = commentjson.load(file_contents)
+                self.file_contents = json.load(file_contents)
             except:
                 pass
         
@@ -28,7 +28,7 @@ class profilePaths():
                 
     def write_to_file(self):
         with open("led_profile_paths.json","w") as f:
-            commentjson.dump(self.globbed_profiles, f, indent=4)
+            json.dump(self.globbed_profiles, f, indent=4)
 
     def preset_or_custom(self, file):
         if file[:19] == "led_profiles/preset":
@@ -44,7 +44,7 @@ class settingsMeta():
 
     def get_config_options(self):
         with open("settingsmeta.json", "r") as file_contents:
-            self.settingsMeta_options = commentjson.load(file_contents)["skillMetadata"]["sections"][2]["fields"][0]["options"]
+            self.settingsMeta_options = json.load(file_contents)["skillMetadata"]["sections"][2]["fields"][0]["options"]
             self.settingsMeta_options = self.seperate_options()
 
     def seperate_options(self):
@@ -99,11 +99,11 @@ class settingsMeta():
     
     def write_option_changes_to_file(self):
         with open("settingsmeta.json", "r") as f:
-            self.file_contents = commentjson.load(f)
+            self.file_contents = json.load(f)
             self.file_contents["skillMetadata"]["sections"][2]["fields"][0]["options"] = self.settingsMeta_options
 
         with open("settingsmeta.json", "w") as f:
-            commentjson.dump( self.file_contents ,f, indent=4 )
+            json.dump( self.file_contents ,f, indent=4 )
     
     
 def settingsmeta_and_profile_paths():
