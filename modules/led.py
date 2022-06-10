@@ -7,14 +7,16 @@ import time
 class execute():
     def __init__(self, colour_scheme):
         self.colour_scheme = colour_scheme
-        self.strip = apa102.APA102(num_led=12, mosi=10, sclk=11, order='rbg')
             
     def execute(self):
-        LED(5).on()
-        for led in range(12):
-            self.strip.set_pixel_rgb(led, 0xFF0000)   
-        self.strip.show()
+        l = LED(5)
+        l.on()
+        strip = apa102.APA102(num_led=12, mosi=10, sclk=11, order='rbg')
+
+        for led_num in range(12):
+            strip.set_pixel_rgb(led_num, 0xFF0000)   
+        strip.show()
         time.sleep(2) 
-        self.strip.clear_strip()
-        self.strip.cleanup()      
+        strip.clear_strip()
+        strip.cleanup()      
         

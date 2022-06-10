@@ -20,8 +20,8 @@ class onMessageBusEvent(MycroftSkill):
         self.colour_scheme = checkSettingsMeta().colour_scheme()
         leds = led.execute(self.colour_scheme)
         if checkSettingsMeta().is_led_enabled() == True:
-            self.add_event('mycroft.ready', leds.execute()) #,"ready"
-            self.add_event('recognizer_loop:wakeword', leds.execute()) #self.colour_scheme,"wakeword"
+            self.add_event('mycroft.ready', leds.execute) #,"ready"
+            self.add_event('recognizer_loop:wakeword', leds.execute) #self.colour_scheme,"wakeword"
 
                         
 
