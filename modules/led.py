@@ -4,10 +4,6 @@ from apa102_pi.driver import apa102
 from gpiozero import LED
 import time
 
-def getInfoThenExecute(event, led_config):
-    pass
-
-
 class execute():
     def __init__(self, led_dict):
         self.led_dict = led_dict
