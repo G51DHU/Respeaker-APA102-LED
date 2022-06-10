@@ -24,7 +24,7 @@ class execute():
     def execute(self):
         LED(5).on()
         for led in self.led_dict:
-            self.strip.set_pixel_rgb(led[0], f"0x{led[1]}")   
+            self.strip.set_pixel_rgb(led[0], f"0xFF0000")   
         self.strip.show()
         time.sleep(2) 
         
