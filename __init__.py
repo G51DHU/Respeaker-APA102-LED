@@ -11,18 +11,17 @@ class checkSettingsMeta(MycroftSkill):
             return True
         return False
         
-    def led_config(self):
-        return self.settings.get("led_config") 
+    def colour_scheme(self):
+        return self.settings.get("colour_scheme") 
 
 
 class onMessageBusEvent(MycroftSkill):
     def initialize(self):
-        self.led_config = checkSettingsMeta().led_config()
-        #self.add_event('mycroft.skills.initialized', update.settingsmeta_and_profile_paths())
-        leds = led.execute(self.led_config)
+        self.colour_scheme = checkSettingsMeta().colour_scheme()
+        leds = led.execute(self.colour_scheme)
         if checkSettingsMeta().is_led_enabled() == True:
             self.add_event('mycroft.ready', leds.execute()) #,"ready"
-            self.add_event('recognizer_loop:wakeword', leds.execute()) #self.led_config,"wakeword"
+            self.add_event('recognizer_loop:wakeword', leds.execute()) #self.colour_scheme,"wakeword"
 
                         
 
