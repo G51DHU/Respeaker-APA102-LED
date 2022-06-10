@@ -12,7 +12,7 @@ class execute():
     def execute(self):
         LED(5).on()
         for led in range(12):
-            self.strip.set_pixel_rgb(led, f"0xFF0000")   
+            self.strip.set_pixel_rgb(led, 0xFF0000)   
         self.strip.show()
         time.sleep(2) 
         self.strip.clear_strip()
