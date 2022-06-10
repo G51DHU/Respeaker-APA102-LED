@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from apa102_pi.driver import apa102
+from gpiozero import led
 import time
 
 def getInfoThenExecute(event, led_config):
@@ -21,8 +22,9 @@ class execute():
             
             
     def execute(self):
-        for LED in self.led_dict:
-            self.strip.set_pixel_rgb(LED[0], f"0x{LED[1]}")   
+        led(5).on()
+        for led in self.led_dict:
+            self.strip.set_pixel_rgb(led[0], f"0x{led[1]}")   
         self.strip.show()
         time.sleep(2) 
         
