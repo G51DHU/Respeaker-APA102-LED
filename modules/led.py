@@ -13,7 +13,6 @@ class execute():
     def ready(self):
         strip = apa102.APA102(num_led=12, mosi=10, sclk=11, order='rbg')
         strip.clear_strip()
-        strip.cleanup()
         for led_num in range(12):
             strip.set_pixel_rgb(led_num, 0xFF0000)   
         strip.show()
@@ -24,7 +23,6 @@ class execute():
     def wakeword(self):
         strip = apa102.APA102(num_led=12, mosi=10, sclk=11, order='rbg')
         strip.clear_strip()
-        strip.cleanup()
         for led_num in range(12):
             strip.set_pixel_rgb(led_num, 0x00CAFF)   
         strip.show()
@@ -35,7 +33,6 @@ class execute():
     def mute(self):
         strip = apa102.APA102(num_led=12, mosi=10, sclk=11, order='rbg')
         strip.clear_strip()
-        strip.cleanup()
         for led_num in range(12):
             strip.set_pixel_rgb(led_num, 0xFF0000)   
         strip.show()
@@ -43,7 +40,6 @@ class execute():
     def unmute(self):
         strip = apa102.APA102(num_led=12, mosi=10, sclk=11, order='rbg')
         strip.clear_strip()
-        strip.cleanup()
         for led_num in range(12):
             strip.set_pixel_rgb(led_num, 0xFF0000)   
         strip.show()
@@ -52,7 +48,6 @@ class execute():
     def failed_wifi(self):
         strip = apa102.APA102(num_led=12, mosi=10, sclk=11, order='rbg')
         strip.clear_strip()
-        strip.cleanup()
         for led_num in range(12):
             strip.set_pixel_rgb(led_num, 0x800080)   
         strip.show()
