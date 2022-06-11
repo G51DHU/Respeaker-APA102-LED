@@ -18,11 +18,12 @@ class checkSettingsMeta(MycroftSkill):
 class onMessageBusEvent(MycroftSkill):
     def initialize(self):
         self.colour_scheme = checkSettingsMeta().colour_scheme()
-        leds = led.execute(self.colour_scheme)
+        led_cheme_execute = led.execute(self.colour_scheme)
         if checkSettingsMeta().is_led_enabled() == True:
-            self.add_event('mycroft.ready', leds.execute) #,"ready"
-            self.add_event('recognizer_loop:wakeword', leds.execute) #self.colour_scheme,"wakeword"
-
+            self.add_event('mycroft.ready', led_cheme_execute.ready)
+            self.add_event('recognizer_loop:wakeword', led_cheme_execute.wakeword)
+            self.add_event('mycroft.mic.mute', led_cheme_execute.mute) 
+            self.add_event('mycroft.mic.unmute', led_cheme_execute.unmute) 
                         
 
 def create_skill():
