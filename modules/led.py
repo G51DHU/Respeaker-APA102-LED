@@ -7,12 +7,13 @@ import time
 class execute():
     def __init__(self, colour_scheme):
         self.colour_scheme = colour_scheme
+        self.l = LED(5)
+        self.l.on()
             
     def ready(self):
-        l = LED(5)
-        l.on()
         strip = apa102.APA102(num_led=12, mosi=10, sclk=11, order='rbg')
         strip.clear_strip()
+        strip.cleanup()
         for led_num in range(12):
             strip.set_pixel_rgb(led_num, 0xFF0000)   
         strip.show()
@@ -21,34 +22,49 @@ class execute():
         strip.cleanup()
         
     def wakeword(self):
-        l = LED(5)
-        l.on()
         strip = apa102.APA102(num_led=12, mosi=10, sclk=11, order='rbg')
+        strip.clear_strip()
+        strip.cleanup()
         for led_num in range(12):
-            strip.set_pixel_rgb(led_num, 0xFF0000)   
+            strip.set_pixel_rgb(led_num, 0x00CAFF)   
         strip.show()
         time.sleep(2) 
         strip.clear_strip()
         strip.cleanup()   
 
     def mute(self):
-        l = LED(5)
-        l.on()
         strip = apa102.APA102(num_led=12, mosi=10, sclk=11, order='rbg')
+        strip.clear_strip()
+        strip.cleanup()
         for led_num in range(12):
             strip.set_pixel_rgb(led_num, 0xFF0000)   
         strip.show()
 
     def unmute(self):
+        strip = apa102.APA102(num_led=12, mosi=10, sclk=11, order='rbg')
         strip.clear_strip()
         strip.cleanup()
-        l = LED(5)
-        l.on()
-        strip = apa102.APA102(num_led=12, mosi=10, sclk=11, order='rbg')
         for led_num in range(12):
             strip.set_pixel_rgb(led_num, 0xFF0000)   
         strip.show()
 
 
-   
-        
+    def failed_wifi(self):
+        strip = apa102.APA102(num_led=12, mosi=10, sclk=11, order='rbg')
+        strip.clear_strip()
+        strip.cleanup()
+        for led_num in range(12):
+            strip.set_pixel_rgb(led_num, 0x800080)   
+        strip.show()
+        time.sleep(4) 
+        strip.clear_strip()
+        strip.cleanup()   
+
+    def volume_change(self):
+        strip = apa102.APA102(num_led=12, mosi=10, sclk=11, order='rbg')
+        for led_num in range(12):
+            strip.set_pixel_rgb(led_num, 0xFFFFFF)   
+        strip.show()
+        time.sleep(1.5) 
+        strip.clear_strip()
+        strip.cleanup()       
