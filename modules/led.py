@@ -8,7 +8,7 @@ class execute():
     def __init__(self, colour_scheme):
         self.colour_scheme = colour_scheme
 
-    def leds_on():
+    def leds_on(self):
         l = LED(5)
         l.on()
 
