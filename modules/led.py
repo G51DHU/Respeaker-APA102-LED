@@ -8,12 +8,12 @@ class execute():
     def __init__(self, colour_scheme):
         self.colour_scheme = colour_scheme
 
-    def leds_on()
+    def leds_on():
         l = LED(5)
         l.on()
 
     def ready(self):
-        leds_on()
+        self.leds_on()
         strip = apa102.APA102(num_led=12, mosi=10, sclk=11, order='rbg')
         strip.clear_strip()
         for led_num in range(12):
@@ -24,7 +24,7 @@ class execute():
         strip.cleanup()
         
     def wakeword(self):
-        leds_on()
+        self.leds_on()
         strip = apa102.APA102(num_led=12, mosi=10, sclk=11, order='rbg')
         strip.clear_strip()
         for led_num in range(12):
@@ -35,7 +35,7 @@ class execute():
         strip.cleanup()   
 
     def mute(self):
-        leds_on()
+        self.leds_on()
         strip = apa102.APA102(num_led=12, mosi=10, sclk=11, order='rbg')
         strip.clear_strip()
         for led_num in range(12):
@@ -43,7 +43,7 @@ class execute():
         strip.show()
 
     def unmute(self):
-        leds_on()
+        self.leds_on()
         strip = apa102.APA102(num_led=12, mosi=10, sclk=11, order='rbg')
         strip.clear_strip()
         for led_num in range(12):
@@ -52,7 +52,7 @@ class execute():
 
 
     def failed_wifi(self):
-        leds_on()
+        self.leds_on()
         strip = apa102.APA102(num_led=12, mosi=10, sclk=11, order='rbg')
         strip.clear_strip()
         for led_num in range(12):
@@ -63,7 +63,7 @@ class execute():
         strip.cleanup()   
 
     def volume_change(self):
-        leds_on()
+        self.leds_on()
         strip = apa102.APA102(num_led=12, mosi=10, sclk=11, order='rbg')
         for led_num in range(12):
             strip.set_pixel_rgb(led_num, 0xFFFFFF)   
